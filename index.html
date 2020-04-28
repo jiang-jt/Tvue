@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{name}}</p>
+        <p k-text="name"></p>
+        <p>{{age}}</p>
+        <input type="text" k-model="name">
+        <button @click="changeName">呵呵</button>
+        <div k-html="html"></div>
+    </div>
+</body>
+<script src="compile.js"></script>
+<script src="vue.js"></script>
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        foo: 'foo',
+        bar: { mua: 'mua' },
+        name: '张三',
+        age: 12
+    }
+})
+
+app.$data.foo = 'aaa'
+app.bar.mua = 'aaa'
+
+console.log(app.$data);
+</script>
+
+</html>
